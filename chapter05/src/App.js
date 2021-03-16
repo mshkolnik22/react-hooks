@@ -4,7 +4,7 @@ import PostList from './post/PostList'
 import CreatePost from './post/CreatePost'
 import UserBar from './user/UserBar'
 import Header from './Header'
-import { ThemeContext } from './contexts'
+import { ThemeContext, StateContext } from './contexts'
 import ChangeTheme from './ChangeTheme'
 import appReducer from './reducers'
 
@@ -31,6 +31,7 @@ export default function App () {
     }, [user])
 
     return (
+      <StateContext.Provider value={{ state, dispatch }}>
         <ThemeContext.Provider value={theme}>
             <div style={{ padding: 8 }}>
                 <Header text="React Hooks Blog" />
@@ -44,5 +45,6 @@ export default function App () {
                 <PostList posts={posts} />
             </div>
         </ThemeContext.Provider>
+  </StateContext.Provider>
     )
 }
