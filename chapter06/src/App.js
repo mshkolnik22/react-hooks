@@ -7,11 +7,7 @@ import Header from './Header'
 import { ThemeContext, StateContext } from './contexts'
 import ChangeTheme from './ChangeTheme'
 import appReducer from './reducers'
-
-const defaultPosts = [
-    { title: 'React Hooks', content: 'The greatest thing since sliced bread!', author: 'Daniel Bugl' },
-    { title: 'Using React Fragments', content: 'Keeping the DOM tree clean!', author: 'Daniel Bugl' }
-]
+import ScrollArrow from './ScrollArrow'
 
 export default function App () {
     const [ theme, setTheme ] = useState({
@@ -19,9 +15,15 @@ export default function App () {
         secondaryColor: 'coral'
     })
 
-    const [ state, dispatch ] = useReducer(appReducer, { user: '', posts: defaultPosts })
+    const [ state, dispatch ] = useReducer(appReducer, { user: '', posts: [] })
     const { user } = state
     
+    useEffect(() => {
+        fetch('/api/posts')
+            .then(result => result.json())
+            .then(posts => dispatch({ type: 'FETCH_POSTS', posts }))
+    }, [])
+
     useEffect(() => {
         if (user) {
             document.title = `${user} - React Hooks Blog`
@@ -48,4 +50,3 @@ export default function App () {
         </StateContext.Provider>
     )
 }
-
