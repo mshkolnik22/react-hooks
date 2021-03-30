@@ -64,3 +64,101 @@
     transform: rotate(360deg);
   }
 }
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
+}
+
+ol, ul {
+  padding-left: 30px;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-info {
+  margin-left: 20px;
+}
+.rowStyle {
+  display: flex;
+}
+
+.squareStyle {
+  width:60px;
+  height:60px;
+  background-Color: #ddd;
+  margin: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-Size: 20px;
+  color: black;
+}
+
+.boardStyle {
+  background-color: #eee;
+  width: 208px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  border: 3px #eee solid;
+}
+
+.containerStyle {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.instructionsStyle {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-Size: 16px;
+}
+
+.buttonStyle {
+  margin-top: 15px;
+  margin-bottom: 16px;
+  width: 80px;
+  height: 40px;
+  background-color: #8acaca;
+  color: white;
+  font-Size: 16px;
+}

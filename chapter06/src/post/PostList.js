@@ -1,4 +1,4 @@
-import React, { useContext, useRef, forwardRef } from 'react'
+import React, { useContext } from 'react'
 import { StateContext } from '../contexts'
 
 import Post from './Post'
